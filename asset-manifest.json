@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/portfolio-archi/static/css/main.f855e6bc.css",
-    "main.js": "/portfolio-archi/static/js/main.89004ce5.js",
+    "main.css": "/portfolio-archi/static/css/main.2b3f8c95.css",
+    "main.js": "/portfolio-archi/static/js/main.bd3ece16.js",
     "static/js/453.0103cedc.chunk.js": "/portfolio-archi/static/js/453.0103cedc.chunk.js",
+    "static/media/SourceSans3.ttf": "/portfolio-archi/static/media/SourceSans3.f0bd6d1942b9ef5e8026.ttf",
+    "static/media/Montserrat.ttf": "/portfolio-archi/static/media/Montserrat.628ad7f658e8aaf765c9.ttf",
     "index.html": "/portfolio-archi/index.html",
-    "main.f855e6bc.css.map": "/portfolio-archi/static/css/main.f855e6bc.css.map",
-    "main.89004ce5.js.map": "/portfolio-archi/static/js/main.89004ce5.js.map",
+    "main.2b3f8c95.css.map": "/portfolio-archi/static/css/main.2b3f8c95.css.map",
+    "main.bd3ece16.js.map": "/portfolio-archi/static/js/main.bd3ece16.js.map",
     "453.0103cedc.chunk.js.map": "/portfolio-archi/static/js/453.0103cedc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.89004ce5.js"
+    "static/css/main.2b3f8c95.css",
+    "static/js/main.bd3ece16.js"
   ]
 }
