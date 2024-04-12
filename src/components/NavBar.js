@@ -44,7 +44,7 @@ export default function NavBar() {
                     {/* nav left */}
                     <div className="flex items-center">
                         <img src="https://www.placehold.co/300x300" alt="Logo" className="h-10 w-10" />
-                        <h1 className="ml-6 font-bold text-xl sm:text-3xl">Justin Carl Castro</h1>
+                        <h1 className="ml-6 font-bold text-xl sm:text-3xl leading-tight">Justin Carl Castro</h1>
                     </div>
 
                     <button
