@@ -1,0 +1,8 @@
+#landing-section {
+    height: clamp(600px, 100dvh, 1024px);
+}
+
+#landing-svg {
+    /* height: clamp(500px, 90dvh, 900px); */
+    width: clamp(275px, 95dvw, 900px);
+}

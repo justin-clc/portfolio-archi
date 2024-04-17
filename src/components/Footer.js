@@ -1,8 +1,7 @@
 export default function Footer() {
-
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
-      };
+    };
 
     return (
         <div className="bg-bgDark">
@@ -56,10 +55,13 @@ export default function Footer() {
                 </div>
 
                 {/* footer bottom */}
-                <div className="bg-bgDark flex items-center justify-between h-12 px-4 py-4">
+                <div className="bg-bgDark flex items-center justify-between h-12 px-4 py-6">
                     <span className="block font-primary text-secondary text-sm px-3">&copy; Copyright 2024</span>
 
-                    <button type="button" className="flex items-center pl-3 pr-2 rounded font-primary font-bold text-secondary text-sm hover:bg-secondary hover:text-bgDark transition-colors" onClick={scrollToTop}>
+                    <button
+                        type="button"
+                        className="flex items-center pl-3 pr-2 rounded font-primary font-bold text-secondary text-sm hover:bg-secondary hover:text-bgDark transition-colors"
+                        onClick={scrollToTop}>
                         Back to top&nbsp;
                         <svg
                             className="h-8 w-8"

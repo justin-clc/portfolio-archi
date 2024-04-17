@@ -36,11 +36,11 @@ export default function NavBar() {
 
     return (
         <>
-            <div className="px-2 sticky top-2">
+            <div className="px-2 sticky top-2 z-10">
                 {/* Main Nav */}
                 <nav
                     id="main-nav"
-                    className="flex justify-between mx-auto max-w-screen-2xl bg-bgDark h-16 px-6 py-2 rounded text-white font-primary z-10">
+                    className="flex justify-between mx-auto max-w-screen-2xl bg-bgDark h-16 px-6 py-2 rounded text-white font-primary ">
                     {/* nav left */}
                     <div className="flex items-center">
                         <img src="https://www.placehold.co/300x300" alt="Logo" className="h-10 w-10" />
@@ -92,7 +92,7 @@ export default function NavBar() {
                                     Email
                                     <svg
                                         fill="currentColor"
-                                        className="w-6 h-6 inline"
+                                        className="-ml-1 w-6 h-6 inline"
                                         viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M22 20.007a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007V19h18V7.3l-8 7.2-10-9V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v16.007ZM4.434 5 12 11.81 19.566 5H4.434ZM0 15h8v2H0v-2Zm0-5h5v2H0v-2Z" />
