@@ -36,7 +36,7 @@ export default function NavBar() {
 
     return (
         <>
-            <div className="px-2 sticky top-2 z-10">
+            <div className="px-2 sticky top-2 z-50">
                 {/* Main Nav */}
                 <nav
                     id="main-nav"

@@ -17,6 +17,10 @@ module.exports = {
                 bgMedium: "#3b3b3b",
                 bgLight: "#BDBDBD",
             },
+
+            screens: {
+                'xs' : '400px'
+            }
         },
     },
 };
