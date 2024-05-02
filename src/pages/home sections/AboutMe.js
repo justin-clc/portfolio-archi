@@ -76,14 +76,14 @@ export default function AboutMe() {
                 <div className="flex flex-wrap justify-evenly gap-4 pt-6 max-w-5xl m-auto">
                     <EducationCard
                         name={"Trinity University of Asia"}
-                        image={"https:www.placehold.co/300x300"}
+                        image={"https://www.placehold.co/300x300"}
                         course={"STEM Strand"}
                         start={2020}
                         end={2022}
                     />
                     <EducationCard
                         name={"Trinity University of Asia"}
-                        image={"https:www.placehold.co/300x300"}
+                        image={"https://www.placehold.co/300x300"}
                         course={"STEM Strand"}
                         start={2020}
                         end={2022}
