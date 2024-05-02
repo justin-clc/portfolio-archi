@@ -69,7 +69,7 @@ export default function AboutMe() {
                 </svg>
             </div>
 
-            <section className="bg-secondary px-10 pt-10 pb-8">
+            <section className="bg-secondary px-10 pb-8">
                 <h3 className="max-w-5xl m-auto font-primary font-bold md:text-4xl text-3xl text-bgMedium text-center">
                     Education
                 </h3>
