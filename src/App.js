@@ -12,17 +12,17 @@ import Test from "./pages/Test";
 import ProjectDetails from "./pages/ProjectDetails";
 
 export default function App() {
-    return (
-        <>
-            <NavBar />
-            <HashRouter>
-                <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route path="/test" element={<Test />} />
-                    <Route path="/project/:projectTitle" element={<ProjectDetails />} />
-                </Routes>
-            </HashRouter>
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <NavBar />
+      <HashRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/test" element={<Test />} />
+          <Route path="/project/:projectTitle" element={<ProjectDetails />} />
+        </Routes>
+      </HashRouter>
+      <Footer />
+    </>
+  );
 }
