@@ -52,7 +52,7 @@ export default function Carousel() {
   return (
     <Slider
       {...settings}
-      className="rounded max-w-5xl m:max-h-96 max-h-80 m-auto mt-8 overflow-hidden"
+      className="m:max-h-96 m-auto mt-8 max-h-80 max-w-5xl overflow-hidden rounded"
     >
       <FeaturedProject
         image={

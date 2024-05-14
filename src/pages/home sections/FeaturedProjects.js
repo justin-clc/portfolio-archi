@@ -10,9 +10,9 @@ export default function FeaturedProjects() {
 
   return (
     <>
-      <div className="bg-bgDark relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden bg-bgDark">
         <svg
-          className="relative block h-22"
+          className="h-22 relative block"
           style={waveDivider}
           data-name="Wave Divider"
           xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +25,8 @@ export default function FeaturedProjects() {
           ></path>
         </svg>
       </div>
-      <section className="bg-bgDark px-10 py-12 pb">
-        <h3 className="max-w-5xl m-auto font-primary font-bold md:text-4xl text-3xl text-white text-center">
+      <section className="pb bg-bgDark px-10 py-12">
+        <h3 className="font-primary m-auto max-w-5xl text-center text-3xl font-bold text-white md:text-4xl">
           Recent Projects
         </h3>
         <Carousel />

@@ -55,9 +55,9 @@ export default function AboutMe() {
 
   return (
     <>
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none transform rotate-180">
+      <div className="absolute bottom-0 left-0 w-full rotate-180 transform overflow-hidden leading-none">
         <svg
-          className="relative block h-28 z-0"
+          className="relative z-0 block h-28"
           style={wavesDivider}
           data-name="Waves Divider"
           xmlns="http://www.w3.org/2000/svg"
@@ -80,21 +80,21 @@ export default function AboutMe() {
           ></path>
         </svg>
       </div>
-      <section className="bg-bgMedium px-10 pt-20 pb-12">
-        <div className="flex flex-col md:flex-row items-center md:justify-center md:justify-left md:items-start gap-8 max-w-5xl m-auto">
+      <section className="bg-bgMedium px-10 pb-12 pt-20">
+        <div className="md:justify-left m-auto flex max-w-5xl flex-col items-center gap-8 md:flex-row md:items-start md:justify-center">
           <img
             src={content.Me?.image.fields.file.url}
             alt="Profilepicture"
-            className="rounded-md object-cover max-h-96"
+            className="max-h-96 rounded-md object-cover"
             width={275}
             height={275}
           />
 
           <div>
-            <h2 className="font-primary font-bold md:text-4xl text-3xl text-secondary text-left">
+            <h2 className="font-primary text-left text-3xl font-bold text-secondary md:text-4xl">
               {content.Me?.shortText}
             </h2>
-            <p className="bg-secondary rounded p-4 mt-4 font-primary font-bold text-l md:text-xl text-bgMedium text-justify leading-normal">
+            <p className="font-primary text-l mt-4 rounded bg-secondary p-4 text-justify font-bold leading-normal text-bgMedium md:text-xl">
               {content.Me?.longText}
               eius!
             </p>
@@ -103,10 +103,10 @@ export default function AboutMe() {
       </section>
 
       <section className="bg-bgMedium px-10 pb-16">
-        <h3 className="max-w-5xl m-auto font-primary font-bold md:text-4xl text-3xl text-secondary text-center">
+        <h3 className="font-primary m-auto max-w-5xl text-center text-3xl font-bold text-secondary md:text-4xl">
           Education
         </h3>
-        <div className="flex flex-wrap justify-evenly gap-4 pt-6 max-w-5xl m-auto">
+        <div className="m-auto flex max-w-5xl flex-wrap justify-evenly gap-4 pt-6">
           {sortedEducations.map((education, index) => (
             <EducationCard
               name={education.fields.school}

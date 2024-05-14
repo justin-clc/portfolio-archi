@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react"; // Import useState and useEffect hooks
-
-export default function Landing() {
+export default function Landing({ content }) {
   const landingHeight = {
     height: "clamp(600px, 100dvh, 1024px)",
   };
@@ -9,62 +7,36 @@ export default function Landing() {
     width: "clamp(275px, 95dvw, 900px)",
   };
 
-  const [content, setContent] = useState({});
-
-  useEffect(() => {
-    const contentful = require("contentful");
-
-    const client = contentful.createClient({
-      space: process.env.REACT_APP_CONTENTFUL_SPACE,
-      environment: process.env.REACT_APP_CONTENTFUL_ENVIRONMENT, // defaults to 'master' if not set
-      accessToken: process.env.REACT_APP_CONTENTFUL_TOKEN,
-    });
-
-    client
-      .getEntries({ content_type: "landingContent" }) // Specify content type 'project'
-      .then((entries) => {
-        const mappedContent = entries.items.reduce((acc, item) => {
-          // Destructure to get title directly
-          const { title, ...rest } = item.fields;
-          return { ...acc, [title]: rest }; // Spread existing and add new key:value
-        }, {});
-        setContent(mappedContent);
-      })
-      .catch(console.error);
-  }, []);
-
-  console.log(content);
-
   return (
-    <section className="bg-secondary relative">
+    <section className="relative bg-secondary">
       <img
         src="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt=""
-        className="absolute z-1 w-full h-full object-cover bg-secondary opacity-25 z-1"
+        className="z-1 z-1 absolute h-full w-full bg-secondary object-cover opacity-25"
       />
       <div
-        className="flex flex-col-reverse md:flex-row md:justify-around l:gap-6 md:gap-5 relative items-center box-border mx-auto pt-20 pb-10 md:pb-0 md:pt-12 px-10 max-w-screen-2xl z-5"
+        className="l:gap-6 z-5 relative mx-auto box-border flex max-w-screen-2xl flex-col-reverse items-center px-10 pb-10 pt-20 md:flex-row md:justify-around md:gap-5 md:pb-0 md:pt-12"
         style={landingHeight}
       >
-        <div className="md:ml-8 flex flex-col md:items-start items-center">
-          <h1 className="font-primary font-bold 2xl:text-7xl l:text-6xl md:text-5xl text-4xl text-bgDark text-center md:text-left">
+        <div className="flex flex-col items-center md:ml-8 md:items-start">
+          <h1 className="font-primary l:text-6xl text-center text-4xl font-bold text-bgDark md:text-left md:text-5xl 2xl:text-7xl">
             {content.Me?.shortText}
             {/* Use optional chaining to avoid the error */}
           </h1>
-          <p className="font-secondary font-bold md:text-2xl text-xl text-bgMedium md:text-left text-center mt-2">
+          <p className="font-secondary mt-2 text-center text-xl font-bold text-bgMedium md:text-left md:text-2xl">
             {content.ShortDesc?.shortText}
           </p>
-          <button className="overflow-hidden relative w-48 p-2 h-12 bg-primary mt-6 text-white border-none rounded-md text-xl font-primary capitalize font-bold cursor-pointer z-10 group hover:scale-105  transition-transform">
+          <button className="font-primary group relative z-10 mt-6 h-12 w-48 cursor-pointer overflow-hidden rounded-md border-none bg-primary p-2 text-xl font-bold capitalize text-white transition-transform  hover:scale-105">
             View my projects
-            <span className="absolute w-52 h-32 -top-8 -left-2 bg-blue-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom"></span>
-            <span className="absolute w-52 h-32 -top-8 -left-2 bg-blue-400 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-bottom"></span>
-            <span className="absolute w-52 h-32 -top-8 -left-2 bg-primary rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-bottom"></span>
-            <span className="flex items-center group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-              <p className="flex items-center justify-center gap-3 w-36 -mt-px">
+            <span className="absolute -left-2 -top-8 h-32 w-52 origin-bottom scale-x-0 transform rounded-full bg-blue-200 transition-transform duration-1000 group-hover:scale-x-100 group-hover:duration-500"></span>
+            <span className="absolute -left-2 -top-8 h-32 w-52 origin-bottom scale-x-0 transform rounded-full bg-blue-400 transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-700"></span>
+            <span className="absolute -left-2 -top-8 h-32 w-52 origin-bottom scale-x-0 transform rounded-full bg-primary transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-1000"></span>
+            <span className="absolute left-6 top-2.5 z-10 flex items-center opacity-0 duration-100 group-hover:opacity-100 group-hover:duration-1000">
+              <p className="-mt-px flex w-36 items-center justify-center gap-3">
                 Let's Go
                 <svg
                   fill="currentColor"
-                  className="w-8 h-8 inline"
+                  className="inline h-8 w-8"
                   // style={landingSvgWidth}
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +67,7 @@ export default function Landing() {
             <use href="#landing-blob" />
           </clipPath>
           <image
-            className="relative object-cover w-full h-auto"
+            className="relative h-auto w-full object-cover"
             clipPath="url(#cp)"
             href={content.ShortDesc?.image.fields.file.url}
           />
