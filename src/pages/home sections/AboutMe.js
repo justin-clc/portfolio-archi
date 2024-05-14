@@ -1,9 +1,57 @@
+import React, { useState, useEffect } from "react"; // Import useState and useEffect hooks
+
 import EducationCard from "../../components/EducationCard";
 
 export default function AboutMe() {
   const wavesDivider = {
     width: "calc(100% + 1.3px)",
   };
+
+  const [educations, setEducations] = useState([]);
+
+  useEffect(() => {
+    const contentful = require("contentful");
+
+    const client = contentful.createClient({
+      space: process.env.REACT_APP_CONTENTFUL_SPACE,
+      environment: process.env.REACT_APP_CONTENTFUL_ENVIRONMENT, // defaults to 'master' if not set
+      accessToken: process.env.REACT_APP_CONTENTFUL_TOKEN,
+    });
+
+    client
+      .getEntries({ content_type: "education" }) // Specify content type 'project'
+      .then((entries) => {
+        setEducations(entries.items); // Set state with all project entries
+      })
+      .catch(console.error);
+  }, []);
+  const sortedEducations = [...educations].sort(
+    (a, b) => a.fields.startYear - b.fields.startYear,
+  );
+
+  const [content, setContent] = useState({});
+
+  useEffect(() => {
+    const contentful = require("contentful");
+
+    const client = contentful.createClient({
+      space: process.env.REACT_APP_CONTENTFUL_SPACE,
+      environment: process.env.REACT_APP_CONTENTFUL_ENVIRONMENT, // defaults to 'master' if not set
+      accessToken: process.env.REACT_APP_CONTENTFUL_TOKEN,
+    });
+
+    client
+      .getEntries({ content_type: "landingContent" }) // Specify content type 'project'
+      .then((entries) => {
+        const mappedContent = entries.items.reduce((acc, item) => {
+          // Destructure to get title directly
+          const { title, ...rest } = item.fields;
+          return { ...acc, [title]: rest }; // Spread existing and add new key:value
+        }, {});
+        setContent(mappedContent);
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <>
@@ -35,21 +83,19 @@ export default function AboutMe() {
       <section className="bg-bgMedium px-10 pt-20 pb-12">
         <div className="flex flex-col md:flex-row items-center md:justify-center md:justify-left md:items-start gap-8 max-w-5xl m-auto">
           <img
-            src="https://www.placehold.co/400x400/"
+            src={content.Me?.image.fields.file.url}
             alt="Profilepicture"
-            className="rounded-md"
+            className="rounded-md object-cover max-h-96"
             width={275}
             height={275}
           />
 
           <div>
             <h2 className="font-primary font-bold md:text-4xl text-3xl text-secondary text-left">
-              Justin Carl Castro
+              {content.Me?.shortText}
             </h2>
             <p className="bg-secondary rounded p-4 mt-4 font-primary font-bold text-l md:text-xl text-bgMedium text-justify leading-normal">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
-              vel maxime illo cum facilis sed sit ex culpa ut dicta! Ipsam
-              maxime ullam accusamus accusantium iste, nemo adipisci labore
+              {content.Me?.longText}
               eius!
             </p>
           </div>
@@ -61,20 +107,16 @@ export default function AboutMe() {
           Education
         </h3>
         <div className="flex flex-wrap justify-evenly gap-4 pt-6 max-w-5xl m-auto">
-          <EducationCard
-            name={"Don Bosco Indian English Academy School, Kuwait"}
-            image={"https://www.placehold.co/300x300"}
-            course={"Elementary - Junior High"}
-            start={2010}
-            end={2019}
-          />
-          <EducationCard
-            name={"New Kuwait Philippine International School, Kuwait"}
-            image={"https://www.placehold.co/300x300"}
-            course={"Junior Highschool"}
-            start={2019}
-            end={2020}
-          />
+          {sortedEducations.map((education, index) => (
+            <EducationCard
+              name={education.fields.school}
+              image={education.fields.logo.fields.file.url}
+              course={education.fields.course}
+              start={education.fields.startYear}
+              end={education.fields.endYear}
+              key={index}
+            />
+          ))}
         </div>
       </section>
     </>

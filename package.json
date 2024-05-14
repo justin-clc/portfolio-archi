@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^16.4.5",
     "gh-pages": "^6.1.1",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
