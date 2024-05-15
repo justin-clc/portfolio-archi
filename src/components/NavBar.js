@@ -66,7 +66,7 @@ export default function NavBar() {
         {/* Main Nav */}
         <nav
           id="main-nav"
-          className="font-primary mx-auto flex h-16 max-w-screen-2xl justify-between rounded bg-bgDark px-6 py-2 text-white "
+          className="font-primary mx-auto flex h-16 max-w-screen-2xl justify-between rounded bg-bgDark px-6 py-2 text-white"
         >
           {/* nav left */}
           <div className="flex items-center">
@@ -99,23 +99,23 @@ export default function NavBar() {
           <ul className="text-l hidden items-center gap-4 font-bold uppercase md:flex">
             <li>
               <a
-                href="/link"
+                href="/"
                 className="colors border-0 border-b-2 border-transparent px-2 py-1 transition hover:border-white"
               >
                 Home
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="/link"
                 className="colors border-0 border-b-2 border-transparent px-2 py-1 transition hover:border-white"
               >
                 About Me
               </a>
-            </li>
+            </li> */}
             <li>
               <a
-                href="/link"
+                href="/#/projects"
                 className="colors border-0 border-b-2 border-transparent px-2 py-1 transition hover:border-white"
               >
                 Projects
@@ -162,7 +162,7 @@ export default function NavBar() {
                 <NavMenuLink href="/">Home</NavMenuLink>
               </li>
               <li>
-                <NavMenuLink href="/projects">Project</NavMenuLink>
+                <NavMenuLink href="/#/projects">Project</NavMenuLink>
               </li>
             </ul>
           </nav>
