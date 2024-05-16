@@ -26,7 +26,12 @@ export default function Landing({ content }) {
           <p className="font-secondary mt-2 text-center text-xl font-bold text-bgMedium md:text-left md:text-2xl">
             {content.ShortDesc?.shortText}
           </p>
-          <button className="font-primary group relative z-10 mt-6 h-12 w-48 cursor-pointer overflow-hidden rounded-md border-none bg-primary p-2 text-xl font-bold capitalize text-white transition-transform  hover:scale-105">
+          <button
+            className="font-primary group relative z-10 mt-6 h-12 w-48 cursor-pointer overflow-hidden rounded-md border-none bg-primary p-2 text-xl font-bold capitalize text-white transition-transform  hover:scale-105"
+            onClick={() =>
+              (window.location.href = "/portfolio-archi/#/projects/year-1")
+            }
+          >
             View my projects
             <span className="absolute -left-2 -top-8 h-32 w-52 origin-bottom scale-x-0 transform rounded-full bg-blue-200 transition-transform duration-1000 group-hover:scale-x-100 group-hover:duration-500"></span>
             <span className="absolute -left-2 -top-8 h-32 w-52 origin-bottom scale-x-0 transform rounded-full bg-blue-400 transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-700"></span>

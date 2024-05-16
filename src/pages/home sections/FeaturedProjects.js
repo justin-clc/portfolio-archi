@@ -37,7 +37,9 @@ export default function FeaturedProjects() {
         <FeaturedGallery />
         <button
           class="group relative m-auto mt-6 flex h-16  w-64 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-accent p-2 font-extrabold text-white duration-300 hover:scale-95"
-          onClick={() => (window.location.href = "/#/projects")}
+          onClick={() =>
+            (window.location.href = "/portfolio-archi/#/projects/year-1")
+          }
         >
           <div class="absolute -top-4 right-32  z-10 h-40 w-40 rounded-full bg-primary duration-500 group-hover:right-2 group-hover:top-1 group-hover:scale-150"></div>
           <div class="absolute -top-4 right-2  z-10 h-32 w-32 rounded-full bg-sky-800 duration-500 group-hover:right-2  group-hover:top-1 group-hover:scale-150"></div>

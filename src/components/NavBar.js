@@ -99,7 +99,7 @@ export default function NavBar() {
           <ul className="text-l hidden items-center gap-4 font-bold uppercase md:flex">
             <li>
               <a
-                href="/"
+                href="/portfolio-archi/"
                 className="colors border-0 border-b-2 border-transparent px-2 py-1 transition hover:border-white"
               >
                 Home
@@ -115,7 +115,7 @@ export default function NavBar() {
             </li> */}
             <li>
               <a
-                href="/#/projects"
+                href="/portfolio-archi/#/projects/year-1"
                 className="colors border-0 border-b-2 border-transparent px-2 py-1 transition hover:border-white"
               >
                 Projects
@@ -159,10 +159,12 @@ export default function NavBar() {
           >
             <ul className="font-primary pt-1 text-center font-bold uppercase text-white">
               <li>
-                <NavMenuLink href="/">Home</NavMenuLink>
+                <NavMenuLink href="/portfolio-archi/">Home</NavMenuLink>
               </li>
               <li>
-                <NavMenuLink href="/#/projects">Project</NavMenuLink>
+                <NavMenuLink href="/portfolio-archi/#/projects/year-1">
+                  Project
+                </NavMenuLink>
               </li>
             </ul>
           </nav>
