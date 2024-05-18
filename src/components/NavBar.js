@@ -115,7 +115,7 @@ export default function NavBar() {
             </li> */}
             <li>
               <a
-                href="/portfolio-archi/#/projects/year-1"
+                href="/portfolio-archi/#/school-year/1"
                 className="colors border-0 border-b-2 border-transparent px-2 py-1 transition hover:border-white"
               >
                 Projects
@@ -162,7 +162,7 @@ export default function NavBar() {
                 <NavMenuLink href="/portfolio-archi/">Home</NavMenuLink>
               </li>
               <li>
-                <NavMenuLink href="/portfolio-archi/#/projects/year-1">
+                <NavMenuLink href="/portfolio-archi/#/school-year/1">
                   Project
                 </NavMenuLink>
               </li>

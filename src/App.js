@@ -9,10 +9,11 @@ import Footer from "./components/Footer";
 
 //  Pages
 import Home from "./pages/Home";
-import Projects from "./templates/Projects";
 
 import Test from "./pages/Test";
 import ProjectDetails from "./pages/ProjectDetails";
+import Subjects from "./templates/Subjects";
+import Activities from "./templates/Activities";
 
 export default function App() {
   const [content, setContent] = useState({});
@@ -46,26 +47,10 @@ export default function App() {
       <HashRouter>
         <Routes>
           <Route exact path="/" element={<Home content={content} />} />
-          <Route
-            excat
-            path="/projects/year-1"
-            element={<Projects year={1} />}
-          />
-          <Route
-            excat
-            path="/projects/year-2"
-            element={<Projects year={2} />}
-          />
-          <Route
-            excat
-            path="/projects/year-3"
-            element={<Projects year={3} />}
-          />
-          <Route
-            excat
-            path="/projects/year-4"
-            element={<Projects year={4} />}
-          />
+
+          <Route path="/school-year/:year" element={<Subjects />} />
+
+          <Route path="/activities/:subjectTitle" element={<Activities />} />
 
           <Route path="/test" element={<Test />} />
           <Route path="/project/:projectTitle" element={<ProjectDetails />} />
