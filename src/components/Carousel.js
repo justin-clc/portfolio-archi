@@ -11,10 +11,10 @@ export default function Carousel() {
     arrows: false,
     focusOnSelect: true,
     infinite: true,
-    autoplay: false,
+    autoplay: true,
     adaptiveHeight: true,
-    speed: 300,
-    autoplaySpeed: 2000,
+    speed: 500,
+    autoplaySpeed: 3000,
     cssEase: "linear",
     responsive: [
       {

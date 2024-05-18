@@ -12,8 +12,8 @@ import Home from "./pages/Home";
 
 import Test from "./pages/Test";
 import ProjectDetails from "./pages/ProjectDetails";
-import Subjects from "./templates/Subjects";
-import Activities from "./templates/Activities";
+import Subjects from "./pages/Subjects";
+import Activities from "./pages/Activities";
 
 export default function App() {
   const [content, setContent] = useState({});
