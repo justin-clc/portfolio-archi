@@ -29,7 +29,7 @@ export default function Landing({ content }) {
           <button
             className="font-primary group relative z-10 mt-6 h-12 w-48 cursor-pointer overflow-hidden rounded-md border-none bg-primary p-2 text-xl font-bold capitalize text-white transition-transform  hover:scale-105"
             onClick={() =>
-              (window.location.href = "/portfolio-archi/#/projects/year-1")
+              (window.location.href = "/portfolio-archi/#/school-year/1")
             }
           >
             View my projects
