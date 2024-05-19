@@ -70,7 +70,7 @@ export default function Subjects() {
 
   return (
     <main className="-mt-16 w-full bg-bgMedium">
-      <section className="bg-Medium bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] pt-32 dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+      <section className="bg-Medium bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] pt-32">
         <div className="lg:pt-18 relative z-10 mx-auto max-w-screen-xl px-4 py-8 text-center lg:pb-24">
           <a
             href="/portfolio-archi/#/test"
@@ -161,7 +161,7 @@ export default function Subjects() {
         )}
 
         <div className="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-b from-primary"></div>
-        <div class="h-48 bg-gradient-to-b from-transparent from-10% via-bgDark via-80% to-bgDark to-90%"></div>
+        <div className="h-48 bg-gradient-to-b from-transparent from-10% via-bgDark via-80% to-bgDark to-90%"></div>
       </section>
     </main>
   );

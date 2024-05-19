@@ -7,13 +7,13 @@ export default function Semester({ SemesterType, SemesterArray }) {
 
       <div className="m-auto grid max-w-5xl grid-cols-1 gap-4 p-6 sm:grid-cols-2 lg:grid-cols-3">
         {SemesterArray.map((subject, index) => (
-          <a href="/#/test" key={index}>
+          <a href={"/#/activities/" + subject.fields?.title} key={index}>
             <img
               className="h-auto max-w-full rounded-t-lg"
               src={subject.fields?.thumbnail.fields.file.url}
               alt={subject.fields?.title + "-thumbnail"}
             />
-            <span className="m:text-xl text-m block w-full overflow-hidden text-ellipsis whitespace-nowrap rounded-b-lg bg-primary px-2 py-1 font-semibold text-white">
+            <span className="m:text-xl text-m block w-full overflow-hidden text-ellipsis whitespace-nowrap rounded-b-lg bg-bgDark px-2 py-1 font-semibold text-secondary">
               {subject.fields?.name}
             </span>
           </a>
