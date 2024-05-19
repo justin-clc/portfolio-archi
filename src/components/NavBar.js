@@ -8,7 +8,7 @@ const NavMenuLink = ({ children, href }) => {
   );
 };
 
-export default function NavBar() {
+export default function NavBar({ email }) {
   // TOGGLE SIDE NAV
   const toggleNavMenu = () => {
     let navMenu = document.getElementById("nav-menu");

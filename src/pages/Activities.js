@@ -87,7 +87,7 @@ export default function Activities() {
         <div className="m-auto grid max-w-6xl grid-cols-1 justify-center gap-8 px-4 py-8 sm:grid-cols-2 md:grid-cols-3">
           {acts.map((act, index) => (
             <ActivityCard
-              link={"/#/activity/" + act.sys.id}
+              link={"/portfolio-archi/#/activity/" + act.sys.id}
               title={act.fields.title}
               image={act.fields.preview.fields.file.url}
               shortDesc={act.fields.shortDesc}

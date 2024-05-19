@@ -49,7 +49,7 @@ export default function Footer({ content }) {
               &nbsp;Email:
             </h4>
             <a
-              href="mailto:"
+              href={"mailto:" + content.Email?.shortText}
               className="font-secodnary text-l text-white hover:decoration-solid"
             >
               {content.Email?.shortText}
