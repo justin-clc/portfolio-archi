@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ActivityCard from "../components/ActivityCard";
+import BackBtn from "../components/BackBtn";
 
 export default function Activities() {
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+  });
+
   const { subjectTitle } = useParams();
   const [acts, setActs] = useState([]);
   const [subject, setSubject] = useState({});
@@ -46,6 +53,7 @@ export default function Activities() {
 
   return (
     <main className="relative z-0 -mt-16 w-full bg-bgMedium bg-[url('https://images.ctfassets.net/g4icz0qu8jmj/2IXXfCY3di1A3yGGJ9A5e/08229b410adeb5c6877522add68c030a/subtle-prism__2_.svg')]">
+      <BackBtn link={"/school-year/" + subject.fields?.year} theme={"alt"} />
       <section>
         <div className="relative z-10 m-auto flex h-fit max-w-6xl flex-col-reverse gap-4 px-2 pb-8 pt-28 sm:flex-row">
           <div className="flex flex-col items-start justify-center p-4 sm:w-3/4">
@@ -76,7 +84,7 @@ export default function Activities() {
         <h2 className="font-primary m-auto mt-4 max-w-5xl text-center text-3xl font-bold text-bgDark md:mt-16 md:text-4xl">
           Activities
         </h2>
-        <div className="m-auto grid max-w-6xl grid-cols-1 justify-center gap-8 border border-red-500 px-4 py-8 sm:grid-cols-2 md:grid-cols-3">
+        <div className="m-auto grid max-w-6xl grid-cols-1 justify-center gap-8 px-4 py-8 sm:grid-cols-2 md:grid-cols-3">
           {acts.map((act, index) => (
             <ActivityCard
               link={"/#/activity/" + act.sys.id}

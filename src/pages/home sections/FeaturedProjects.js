@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -5,6 +6,12 @@ import Carousel from "../../components/Carousel";
 import FeaturedGallery from "../../components/FeaturedGallery";
 
 export default function FeaturedProjects() {
+  const navigate = useNavigate();
+
+  const goToSchoolYears = () => {
+    navigate("/school-year/1"); // Assuming this is a valid route
+  };
+
   const waveDivider = {
     width: "calc(100% + 1.3px)",
   };
@@ -37,9 +44,7 @@ export default function FeaturedProjects() {
         <FeaturedGallery />
         <button
           class="group relative m-auto mt-6 flex h-16  w-64 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-accent p-2 font-extrabold text-white duration-300 hover:scale-95"
-          onClick={() =>
-            (window.location.href = "/portfolio-archi/#/school-year/1")
-          }
+          onClick={goToSchoolYears}
         >
           <div class="absolute -top-4 right-32  z-10 h-40 w-40 rounded-full bg-primary duration-500 group-hover:right-2 group-hover:top-1 group-hover:scale-150"></div>
           <div class="absolute -top-4 right-2  z-10 h-32 w-32 rounded-full bg-sky-800 duration-500 group-hover:right-2  group-hover:top-1 group-hover:scale-150"></div>

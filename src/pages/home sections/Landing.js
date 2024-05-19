@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Landing({ content }) {
+  const navigate = useNavigate();
+
+  const goToSchoolYears = () => {
+    navigate("/school-year/1"); // Assuming this is a valid route
+  };
+
   const landingHeight = {
     height: "clamp(600px, 100dvh, 1024px)",
   };
@@ -28,9 +36,7 @@ export default function Landing({ content }) {
           </p>
           <button
             className="font-primary group relative z-10 mt-6 h-12 w-48 cursor-pointer overflow-hidden rounded-md border-none bg-primary p-2 text-xl font-bold capitalize text-white transition-transform  hover:scale-105"
-            onClick={() =>
-              (window.location.href = "/portfolio-archi/#/school-year/1")
-            }
+            onClick={goToSchoolYears}
           >
             View my projects
             <span className="absolute -left-2 -top-8 h-32 w-52 origin-bottom scale-x-0 transform rounded-full bg-blue-200 transition-transform duration-1000 group-hover:scale-x-100 group-hover:duration-500"></span>

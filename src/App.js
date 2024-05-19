@@ -14,6 +14,7 @@ import Test from "./pages/Test";
 import ProjectDetails from "./pages/ProjectDetails";
 import Subjects from "./pages/Subjects";
 import Activities from "./pages/Activities";
+import ActivityDetails from "./pages/ActivityDetails";
 
 export default function App() {
   const [content, setContent] = useState({});
@@ -49,8 +50,8 @@ export default function App() {
           <Route exact path="/" element={<Home content={content} />} />
 
           <Route path="/school-year/:year" element={<Subjects />} />
-
           <Route path="/activities/:subjectTitle" element={<Activities />} />
+          <Route path="/activity/:activityId" element={<ActivityDetails />} />
 
           <Route path="/test" element={<Test />} />
           <Route path="/project/:projectTitle" element={<ProjectDetails />} />
