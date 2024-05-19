@@ -27,7 +27,7 @@ export default function Activities() {
       .getEntries({
         content_type: "subject",
         "fields.title": subjectTitle,
-      }) // Specify content type 'project'
+      })
       .then((entries) => {
         // Assuming only one item is returned
         const {
@@ -42,14 +42,12 @@ export default function Activities() {
         content_type: "activity",
         "fields.subject": subjectTitle,
         select: "sys.id, fields.title, fields.preview, fields.shortDesc",
-      }) // Specify content type 'project'
+      })
       .then((entries) => {
-        setActs(entries.items); // Set state with all project entries
+        setActs(entries.items);
       })
       .catch(console.error);
   }, [subjectTitle]);
-
-  console.log(acts);
 
   return (
     <main className="relative z-0 -mt-16 w-full bg-bgMedium bg-[url('https://images.ctfassets.net/g4icz0qu8jmj/2IXXfCY3di1A3yGGJ9A5e/08229b410adeb5c6877522add68c030a/subtle-prism__2_.svg')]">
