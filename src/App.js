@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { HashRouter, Routes, Route } from "react-router-dom";
-import React, { useState, useEffect } from "react"; // Import useState and useEffect hooks
+import React, { useState, useEffect } from "react";
 
 // Components
 import NavBar from "./components/NavBar";
@@ -9,9 +9,6 @@ import Footer from "./components/Footer";
 
 //  Pages
 import Home from "./pages/Home";
-
-import Test from "./pages/Test";
-import ProjectDetails from "./pages/ProjectDetails";
 import Subjects from "./pages/Subjects";
 import Activities from "./pages/Activities";
 import ActivityDetails from "./pages/ActivityDetails";
@@ -52,9 +49,6 @@ export default function App() {
           <Route path="/school-year/:year" element={<Subjects />} />
           <Route path="/activities/:subjectTitle" element={<Activities />} />
           <Route path="/activity/:activityId" element={<ActivityDetails />} />
-
-          <Route path="/test" element={<Test />} />
-          <Route path="/project/:projectTitle" element={<ProjectDetails />} />
         </Routes>
       </HashRouter>
       <Footer content={content} />
