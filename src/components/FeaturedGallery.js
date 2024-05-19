@@ -21,18 +21,6 @@ function splitIntoSections(items) {
 }
 
 export default function FeaturedGallery() {
-  const numberNames = [
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-  ];
-
   const [images, setImages] = useState({});
 
   useEffect(() => {
@@ -51,7 +39,6 @@ export default function FeaturedGallery() {
       .then((entries) => {
         const splitImages = splitIntoSections(entries.items);
         setImages(splitImages);
-        console.log(splitImages);
       })
       .catch(console.error);
   }, []);
