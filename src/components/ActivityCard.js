@@ -1,6 +1,6 @@
 export default function ActivityCard({ link, title, image, shortDesc }) {
   return (
-    <div className="max-h-xl max-w-sm rounded-lg bg-bgDark shadow">
+    <div className="max-h-xl m-auto max-w-sm rounded-lg bg-bgDark shadow">
       <a href={link}>
         <img
           className="h-64 w-full rounded-t-lg object-cover"

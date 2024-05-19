@@ -73,10 +73,10 @@ export default function Activities() {
       </section>
 
       <section className="relative z-10">
-        <h2 className="font-primary m-auto mt-20 max-w-5xl text-center text-3xl font-bold text-bgDark md:text-4xl">
+        <h2 className="font-primary m-auto mt-4 max-w-5xl text-center text-3xl font-bold text-bgDark md:mt-16 md:text-4xl">
           Activities
         </h2>
-        <div className="m-auto grid max-w-4xl grid-cols-1 px-4 py-8">
+        <div className="m-auto grid max-w-6xl grid-cols-1 justify-center gap-8 border border-red-500 px-4 py-8 sm:grid-cols-2 md:grid-cols-3">
           {acts.map((act, index) => (
             <ActivityCard
               link={"/#/activity/" + act.sys.id}
