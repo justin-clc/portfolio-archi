@@ -98,7 +98,7 @@ export default function Subjects() {
               />
             </svg>
           </a> */}
-          <h1 className="font-primary mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="font-primary mb-4 mt-12 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
             {genContent.SchoolYears?.heading + " " + year}
           </h1>
           <p className="font-secondary mb-8 text-lg font-normal text-bgLight sm:px-16 lg:px-48 lg:text-xl">

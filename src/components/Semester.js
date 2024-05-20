@@ -13,7 +13,7 @@ export default function Semester({ SemesterType, SemesterArray }) {
             key={index}
           >
             <img
-              className="block h-56 w-full rounded-t-md object-cover"
+              className="block h-56 w-full rounded-t-md object-cover object-center"
               src={subject.fields?.thumbnail.fields.file.url}
               alt={subject.fields?.title + "-thumbnail"}
             />
