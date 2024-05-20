@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 
-import FeaturedProject from "./FeaturedProject";
+import FeaturedActivity from "./FeaturedActivity";
 
 export default function Carousel() {
   var settings = {
@@ -12,7 +12,6 @@ export default function Carousel() {
     focusOnSelect: true,
     infinite: true,
     autoplay: true,
-    adaptiveHeight: true,
     speed: 500,
     autoplaySpeed: 3000,
     cssEase: "linear",
@@ -23,7 +22,6 @@ export default function Carousel() {
           slidesToShow: 1,
           slidesToScroll: 1,
           centerPadding: "0px",
-          adaptiveHeight: false,
           dots: true,
         },
       },
@@ -34,7 +32,6 @@ export default function Carousel() {
           slidesToScroll: 1,
           centerPadding: "0px",
           initialSlide: 1,
-          adaptiveHeight: false,
         },
       },
       {
@@ -44,7 +41,6 @@ export default function Carousel() {
           slidesToScroll: 1,
           centerPadding: "0px",
           initialSlide: 1,
-          adaptiveHeight: true,
         },
       },
     ],
@@ -52,21 +48,21 @@ export default function Carousel() {
   return (
     <Slider
       {...settings}
-      className="m:max-h-96 m-auto mt-8 max-h-80 max-w-5xl overflow-hidden rounded"
+      className="carousel-container m-auto mt-8 max-w-5xl overflow-hidden rounded"
     >
-      <FeaturedProject
+      <FeaturedActivity
         image={
           "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
       />
 
-      <FeaturedProject
+      <FeaturedActivity
         image={
           "https://images.unsplash.com/photo-1448459322288-678e8f2bb7f9?q=80&w=1917&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
       />
 
-      <FeaturedProject
+      <FeaturedActivity
         image={
           "https://images.unsplash.com/photo-1490351267196-b7a67e26e41b?q=80&w=1962&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }

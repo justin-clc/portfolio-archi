@@ -72,7 +72,7 @@ export default function Subjects() {
     <main className="-mt-16 w-full bg-bgMedium">
       <section className="bg-Medium bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] pt-32">
         <div className="lg:pt-18 relative z-10 mx-auto max-w-screen-xl px-4 py-8 text-center lg:pb-24">
-          <a
+          {/* <a
             href="/portfolio-archi/#/test"
             className="mb-7 inline-flex items-center justify-between rounded-full bg-bgDark p-1.5 pr-3.5 text-sm text-bgLight transition-colors hover:bg-bgLight hover:text-primary"
           >
@@ -97,7 +97,7 @@ export default function Subjects() {
                 d="m1 9 4-4-4-4"
               />
             </svg>
-          </a>
+          </a> */}
           <h1 className="font-primary mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
             {genContent.SchoolYears?.heading + " " + year}
           </h1>

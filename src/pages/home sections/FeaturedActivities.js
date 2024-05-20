@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Carousel from "../../components/Carousel";
 import FeaturedGallery from "../../components/FeaturedGallery";
 
-export default function FeaturedProjects() {
+export default function FeaturedActivities() {
   const navigate = useNavigate();
 
   const goToSchoolYears = () => {
