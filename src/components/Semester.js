@@ -8,11 +8,12 @@ export default function Semester({ SemesterType, SemesterArray }) {
       <div className="m-auto grid max-w-5xl grid-cols-1 gap-4 p-6 sm:grid-cols-2 lg:grid-cols-3">
         {SemesterArray.map((subject, index) => (
           <a
+            className="z-10 h-fit"
             href={"/portfolio-archi/#/activities/" + subject.fields?.title}
             key={index}
           >
             <img
-              className="h-auto max-w-full rounded-t-lg"
+              className="block h-56 w-full rounded-t-md object-cover"
               src={subject.fields?.thumbnail.fields.file.url}
               alt={subject.fields?.title + "-thumbnail"}
             />
