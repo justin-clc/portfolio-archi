@@ -14,7 +14,7 @@ export default function ActivityCard({ link, title, image, shortDesc }) {
             {title}
           </h5>
         </a>
-        <p className="mb-3 inline-block h-12 font-normal text-gray-700 dark:text-gray-400">
+        <p className="mb-3 block h-12 font-normal text-gray-700 dark:text-gray-400">
           {shortDesc}
         </p>
         <a
