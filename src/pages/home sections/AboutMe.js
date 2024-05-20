@@ -96,7 +96,6 @@ export default function AboutMe() {
             </h2>
             <p className="font-primary text-l mt-4 rounded bg-secondary p-4 text-justify font-bold leading-normal text-bgMedium md:text-xl">
               {content.Me?.longText}
-              eius!
             </p>
           </div>
         </div>
