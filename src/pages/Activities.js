@@ -44,7 +44,18 @@ export default function Activities() {
         select: "sys.id, fields.title, fields.preview, fields.shortDesc",
       })
       .then((entries) => {
-        setActs(entries.items);
+        // Sort entries alphabetically by title (case-insensitive)
+        const sortedEntries = entries.items.sort((a, b) => {
+          const lowerATitle = a.fields.title.toLowerCase();
+          const lowerBTitle = b.fields.title.toLowerCase();
+          return lowerATitle < lowerBTitle
+            ? -1
+            : lowerATitle > lowerBTitle
+              ? 1
+              : 0;
+        });
+        // Update state with the sorted entries
+        setActs(sortedEntries);
       })
       .catch(console.error);
   }, [subjectTitle]);
