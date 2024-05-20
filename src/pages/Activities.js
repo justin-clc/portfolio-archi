@@ -90,7 +90,7 @@ export default function Activities() {
       </section>
 
       <section className="relative z-10">
-        {acts ? (
+        {acts?.fields ? (
           <h2 className="font-primary m-auto mt-4 max-w-5xl text-center text-3xl font-bold text-bgDark md:mt-16 md:text-4xl">
             No Activities Published
           </h2>
