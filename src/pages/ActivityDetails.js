@@ -65,9 +65,30 @@ export default function ActivityDetails() {
           <span className="font-secondary -mb-2 text-2xl font-semibold text-accent">
             {act.fields?.subject}
           </span>
-          <p className="font-secondary mb-16 text-lg font-normal text-gray-300 sm:px-16 lg:px-48 lg:text-xl">
+          <p className="font-secondary mb-8 text-lg font-normal text-gray-300 sm:px-16 lg:px-48 lg:text-xl">
             {act.fields?.shortDesc}
           </p>
+          {act.fields?.asset.fields.file.url ? (
+            <button
+              className="group relative z-10 mb-8 h-12 w-36 cursor-pointer overflow-hidden rounded-md border-none bg-black p-2 text-xl font-bold text-white"
+              title={"Open " + act.fields?.title}
+              onClick={() =>
+                window.open(
+                  act.fields?.asset.fields.file.url,
+                  "_blank",
+                  "noopener,noreferrer",
+                )
+              }
+            >
+              View PDF
+              <span className="absolute -left-2 -top-8 h-32 w-40 origin-left rotate-12 scale-x-0 transform bg-white transition-transform duration-1000 group-hover:scale-x-100 group-hover:duration-500"></span>
+              <span className="absolute -left-2 -top-8 h-32 w-40 origin-left rotate-12 scale-x-0 transform bg-blue-400 transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-700"></span>
+              <span className="absolute -left-2 -top-8 h-32 w-40 origin-left rotate-12 scale-x-0 transform bg-primary transition-transform duration-500 group-hover:scale-x-50 group-hover:duration-1000"></span>
+              <span className="absolute left-6 top-2.5 z-10 opacity-0 duration-100 group-hover:opacity-100 group-hover:duration-1000">
+                Open PDF
+              </span>
+            </button>
+          ) : null}
           <img
             src={act.fields?.preview.fields.file.url}
             alt={act.fields?.title + "preview-image"}
@@ -80,27 +101,6 @@ export default function ActivityDetails() {
         >
           {documentToReactComponents(act.fields?.rtc, { renderNode })}
         </section>
-        {act.fields?.asset.fields.file.url ? (
-          <button
-            className="group relative z-10 m-2 h-12 w-36 cursor-pointer overflow-hidden rounded-md border-none bg-black p-2 text-xl font-bold text-white"
-            title={"Open " + act.fields?.title}
-            onClick={() =>
-              window.open(
-                act.fields?.asset.fields.file.url,
-                "_blank",
-                "noopener,noreferrer",
-              )
-            }
-          >
-            View PDF
-            <span className="absolute -left-2 -top-8 h-32 w-40 origin-left rotate-12 scale-x-0 transform bg-white transition-transform duration-1000 group-hover:scale-x-100 group-hover:duration-500"></span>
-            <span className="absolute -left-2 -top-8 h-32 w-40 origin-left rotate-12 scale-x-0 transform bg-blue-400 transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-700"></span>
-            <span className="absolute -left-2 -top-8 h-32 w-40 origin-left rotate-12 scale-x-0 transform bg-primary transition-transform duration-500 group-hover:scale-x-50 group-hover:duration-1000"></span>
-            <span className="absolute left-6 top-2.5 z-10 opacity-0 duration-100 group-hover:opacity-100 group-hover:duration-1000">
-              Open PDF
-            </span>
-          </button>
-        ) : null}
       </section>
     </main>
   );
