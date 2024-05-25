@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio-archi/static/css/main.55697033.css",
-    "main.js": "/portfolio-archi/static/js/main.f94a2b40.js",
+    "main.js": "/portfolio-archi/static/js/main.0ba4321a.js",
     "static/js/453.0103cedc.chunk.js": "/portfolio-archi/static/js/453.0103cedc.chunk.js",
     "static/media/SourceSans3.ttf": "/portfolio-archi/static/media/SourceSans3.f0bd6d1942b9ef5e8026.ttf",
     "static/media/Montserrat.ttf": "/portfolio-archi/static/media/Montserrat.628ad7f658e8aaf765c9.ttf",
@@ -11,11 +11,11 @@
     "static/media/slick.woff": "/portfolio-archi/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/portfolio-archi/index.html",
     "main.55697033.css.map": "/portfolio-archi/static/css/main.55697033.css.map",
-    "main.f94a2b40.js.map": "/portfolio-archi/static/js/main.f94a2b40.js.map",
+    "main.0ba4321a.js.map": "/portfolio-archi/static/js/main.0ba4321a.js.map",
     "453.0103cedc.chunk.js.map": "/portfolio-archi/static/js/453.0103cedc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.55697033.css",
-    "static/js/main.f94a2b40.js"
+    "static/js/main.0ba4321a.js"
   ]
 }
