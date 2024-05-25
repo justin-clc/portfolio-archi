@@ -20,13 +20,8 @@ export default function Subjects() {
   });
 
   const [genContent, setGenContent] = useState({});
-  const [semester, setSemester] = useState([]);
-
-  const [selectedSemester, setSelectedSemester] = useState("1");
-
-  const handleSemesterSelect = (selectedValue) => {
-    setSelectedSemester(selectedValue); // Update parent state
-  };
+  const [semester1, setSemester1] = useState([]);
+  const [semester2, setSemester2] = useState([]);
 
   useEffect(() => {
     const contentful = require("contentful");
@@ -58,10 +53,24 @@ export default function Subjects() {
         "fields.year": year,
       })
       .then((entries) => {
-        setSemester(entries.items);
+        const semester1Entries = entries.items.filter(
+          (item) => item.fields && item.fields.semester === 1,
+        );
+        const semester2Entries = entries.items.filter(
+          (item) => item.fields && item.fields.semester === 2,
+        );
+
+        setSemester1(semester1Entries);
+        setSemester2(semester2Entries);
       })
       .catch(console.error);
   }, [year]);
+
+  const [selectedSemester, setSelectedSemester] = useState("1");
+
+  const handleSemesterSelect = (selectedValue) => {
+    setSelectedSemester(selectedValue); // Update parent state
+  };
 
   return (
     <main className="-mt-16 w-full bg-bgMedium">
@@ -140,12 +149,19 @@ export default function Subjects() {
           <SemesterDropdown onSelect={handleSemesterSelect} />
         </div>
 
-        {semester.length === 0 && semester.length === 0 ? (
+        {semester1.length === 0 && semester2.length === 0 ? (
           <h3 className="font-primary m-auto mt-8 max-w-5xl text-center text-3xl font-bold text-white md:text-4xl">
             No Subjects Yet
           </h3>
         ) : (
-          <Semester SemesterType={selectedSemester} SemesterArray={semester} />
+          <>
+            {selectedSemester === "1" && semester1.length > 0 && (
+              <Semester SemesterType={1} SemesterArray={semester1} />
+            )}
+            {selectedSemester === "2" && semester2.length > 0 && (
+              <Semester SemesterType={2} SemesterArray={semester2} />
+            )}
+          </>
         )}
 
         <div className="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-b from-primary"></div>
