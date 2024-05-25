@@ -41,7 +41,7 @@ export default function Subjects() {
       .getEntries({
         content_type: "generalPages",
         "fields.title": "SchoolYears",
-      }) // Specify content type 'project'
+      })
       .then((entries) => {
         const mappedContent = entries.items.reduce((acc, item) => {
           // Destructure to get title directly
@@ -56,14 +56,12 @@ export default function Subjects() {
       .getEntries({
         content_type: "subject",
         "fields.year": year,
-      }) // Specify content type 'project'
+      })
       .then((entries) => {
         setSemester(entries.items);
       })
       .catch(console.error);
   }, [year]);
-
-  console.log(semester);
 
   return (
     <main className="-mt-16 w-full bg-bgMedium">

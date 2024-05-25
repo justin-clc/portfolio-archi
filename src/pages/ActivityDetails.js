@@ -27,7 +27,7 @@ export default function ActivityDetails() {
       .getEntries({
         content_type: "activity",
         "sys.id": activityId,
-      }) // Specify content type 'project'
+      })
       .then((entries) => {
         // Assuming only one item is returned
         const {
@@ -37,8 +37,6 @@ export default function ActivityDetails() {
       })
       .catch(console.error);
   }, [activityId]);
-
-  console.log(act.fields?.asset);
 
   const renderNode = {
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
