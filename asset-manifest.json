@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio-archi/static/css/main.55697033.css",
-    "main.js": "/portfolio-archi/static/js/main.6bc53a9e.js",
+    "main.css": "/portfolio-archi/static/css/main.0cec8f8d.css",
+    "main.js": "/portfolio-archi/static/js/main.33561717.js",
     "static/js/453.0103cedc.chunk.js": "/portfolio-archi/static/js/453.0103cedc.chunk.js",
     "static/media/SourceSans3.ttf": "/portfolio-archi/static/media/SourceSans3.f0bd6d1942b9ef5e8026.ttf",
     "static/media/Montserrat.ttf": "/portfolio-archi/static/media/Montserrat.628ad7f658e8aaf765c9.ttf",
@@ -10,12 +10,12 @@
     "static/media/slick.ttf": "/portfolio-archi/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/portfolio-archi/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/portfolio-archi/index.html",
-    "main.55697033.css.map": "/portfolio-archi/static/css/main.55697033.css.map",
-    "main.6bc53a9e.js.map": "/portfolio-archi/static/js/main.6bc53a9e.js.map",
+    "main.0cec8f8d.css.map": "/portfolio-archi/static/css/main.0cec8f8d.css.map",
+    "main.33561717.js.map": "/portfolio-archi/static/js/main.33561717.js.map",
     "453.0103cedc.chunk.js.map": "/portfolio-archi/static/js/453.0103cedc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.55697033.css",
-    "static/js/main.6bc53a9e.js"
+    "static/css/main.0cec8f8d.css",
+    "static/js/main.33561717.js"
   ]
 }
