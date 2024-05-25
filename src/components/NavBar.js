@@ -118,7 +118,7 @@ export default function NavBar({ email }) {
                 href="/portfolio-archi/#/school-year/1"
                 className="colors border-0 border-b-2 border-transparent px-2 py-1 transition hover:border-white"
               >
-                Projects
+                School Works
               </a>
             </li>
           </ul>
@@ -163,7 +163,7 @@ export default function NavBar({ email }) {
               </li>
               <li>
                 <NavMenuLink href="/portfolio-archi/#/school-year/1">
-                  Project
+                  School Works
                 </NavMenuLink>
               </li>
             </ul>
