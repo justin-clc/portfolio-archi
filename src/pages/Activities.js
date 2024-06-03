@@ -72,11 +72,11 @@ export default function Activities() {
             <h1 className="font-primary mb-4 text-4xl font-extrabold leading-tight tracking-tight text-bgDark md:text-5xl lg:text-6xl">
               {subject.fields?.name}
             </h1>
-            <p className="font-secondary -mt-2 font-semibold text-bgMedium">
+            {/* <p className="font-secondary -mt-2 font-semibold text-bgMedium">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
               aspernatur similique animi sequi placeat ipsa in, repellendus
               voluptates iste!
-            </p>
+            </p> */}
           </div>
           <div className="relative m-auto flex aspect-square h-48 w-48 flex-shrink-0 sm:mr-8 md:h-80 md:w-80">
             <img
@@ -99,7 +99,7 @@ export default function Activities() {
             Activities
           </h2>
         )}
-        <div className="m-auto grid max-w-6xl grid-cols-1 justify-center gap-8 px-4 py-8 sm:grid-cols-2 md:grid-cols-3">
+        <div className="m-auto flex max-w-6xl flex-wrap justify-center gap-x-6 gap-y-10 px-4 py-8">
           {acts.map((act, index) => (
             <ActivityCard
               link={"/portfolio-archi/#/activity/" + act.sys.id}

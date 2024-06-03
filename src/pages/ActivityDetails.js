@@ -57,7 +57,7 @@ export default function ActivityDetails() {
       <BackBtn link={"/activities/" + act.fields?.subject} />
       <section className="m-auto max-w-5xl pt-16">
         <div className="mx-auto max-w-screen-xl px-4 pt-24 text-center">
-          <h1 className="font-primary mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="font-primary mb-4 break-words text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">
             {act.fields?.title}
           </h1>
           <span className="font-secondary -mb-2 text-2xl font-semibold text-accent">
