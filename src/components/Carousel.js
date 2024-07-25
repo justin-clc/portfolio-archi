@@ -3,7 +3,7 @@ import Slider from "react-slick";
 
 import FeaturedActivity from "./FeaturedActivity";
 
-export default function Carousel() {
+export default function Carousel({ items }) {
   var settings = {
     centerMode: true,
     centerPadding: "160px",
@@ -50,7 +50,15 @@ export default function Carousel() {
       {...settings}
       className="carousel-container m-auto mt-8 max-w-5xl overflow-hidden rounded"
     >
-      <FeaturedActivity
+      {items.map((item, key) => (
+        <FeaturedActivity
+          activityId={item?.fields.ref.sys.id}
+          activityName={item?.fields.ref.fields.title}
+          image={item?.fields.ref.fields.preview.fields.file.url}
+          key={key}
+        />
+      ))}
+      {/* <FeaturedActivity
         image={
           "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
@@ -66,7 +74,7 @@ export default function Carousel() {
         image={
           "https://images.unsplash.com/photo-1490351267196-b7a67e26e41b?q=80&w=1962&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
-      />
+      /> */}
     </Slider>
   );
 }

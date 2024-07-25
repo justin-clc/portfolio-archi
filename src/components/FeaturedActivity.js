@@ -1,11 +1,11 @@
-const FeaturedActivity = ({ activityId, image, alt }) => {
+const FeaturedActivity = ({ activityId, activityName, image, alt }) => {
   return (
     <div className="carousel-item outline-none">
       <a
         href={"/portfolio-archi/#/activity/" + activityId}
-        className="font-primary  block w-full bg-accent p-2 text-center capitalize"
+        className="font-primary block w-full overflow-hidden text-ellipsis whitespace-nowrap bg-accent px-4 py-2 text-center capitalize text-bgDark"
       >
-        View project
+        <strong>View project</strong> - {activityName}
       </a>
 
       <img
