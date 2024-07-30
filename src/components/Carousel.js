@@ -48,7 +48,7 @@ export default function Carousel({ items }) {
   return (
     <Slider
       {...settings}
-      className="carousel-container m-auto mt-8 max-w-5xl overflow-hidden rounded"
+      className="carousel-container m-auto mt-8 max-w-6xl overflow-hidden rounded"
     >
       {items.map((item, key) => (
         <FeaturedActivity

@@ -18,6 +18,7 @@ export default function FeaturedActivities() {
   };
 
   const [featured, setFeatured] = useState([]);
+  const [images, setImages] = useState([]);
   useEffect(() => {
     const contentful = require("contentful");
 
@@ -33,6 +34,15 @@ export default function FeaturedActivities() {
       })
       .then((entries) => {
         setFeatured(entries.items);
+      })
+      .catch(console.error);
+
+    client
+      .getEntries({
+        content_type: "featuredImages",
+      })
+      .then((entries) => {
+        setImages(entries.items);
       })
       .catch(console.error);
   }, []);
@@ -62,7 +72,7 @@ export default function FeaturedActivities() {
       </section>
 
       <section className="bg-bgDark px-10 py-8">
-        <FeaturedGallery />
+        <FeaturedGallery images={images} />
         <button
           className="group relative m-auto mt-6 flex h-16  w-48 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-accent p-2 font-extrabold text-white duration-300 hover:scale-95"
           onClick={goToSchoolYears}
