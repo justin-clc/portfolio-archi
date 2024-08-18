@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"; // Import useState and useEffect hooks
+import SkeletonLoader from "./SkeletonLoader";
 
 const NavMenuLink = ({ children, href }) => {
   return (
@@ -36,6 +37,7 @@ export default function NavBar({ email }) {
     } catch (error) {}
   };
 
+  const [isLoading, setIsLoading] = useState(true);
   const [content, setContent] = useState({});
 
   useEffect(() => {
@@ -56,6 +58,7 @@ export default function NavBar({ email }) {
           return { ...acc, [title]: rest }; // Spread existing and add new key:value
         }, {});
         setContent(mappedContent);
+        setIsLoading(false);
       })
       .catch(console.error);
   }, []);
@@ -70,13 +73,21 @@ export default function NavBar({ email }) {
         >
           {/* nav left */}
           <div className="flex items-center">
-            <img
-              src={content.Logo?.image.fields.file.url}
-              alt="Logo"
-              className="h-10 w-10"
-            />
+            {isLoading ? (
+              <SkeletonLoader type={"icon"} className="h-10 w-10" />
+            ) : (
+              <img
+                src={content.Logo?.image.fields.file.url}
+                alt="Logo"
+                className="h-10 w-10"
+              />
+            )}
             <h1 className="ml-6 text-xl font-bold leading-tight sm:text-3xl">
-              {content.Me?.shortText}
+              {isLoading ? (
+                <SkeletonLoader type={"title"} />
+              ) : (
+                content.Me?.shortText
+              )}
             </h1>
           </div>
 
