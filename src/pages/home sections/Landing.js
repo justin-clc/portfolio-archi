@@ -79,7 +79,7 @@ export default function Landing({ content }) {
         >
           <path
             id="landing-blob"
-            className="animate-pulse text-bgMedium"
+            className={`text-bgMedium ${!content.ShortDesc?.image.fields.file.url ? 'animate-pulse' : ''}`}
             fill="currentColor"
             d="M23.3,-28.7C30.4,-21.7,36.8,-14.6,38.5,-6.5C40.2,1.6,37.4,10.8,32.4,18C27.4,25.3,20.2,30.6,11.8,34.5C3.5,38.4,-6.2,40.8,-13.9,38.1C-21.6,35.3,-27.5,27.3,-32,18.8C-36.6,10.3,-39.9,1.3,-38.7,-7C-37.5,-15.4,-31.7,-23.2,-24.5,-30.2C-17.3,-37.2,-8.7,-43.4,-0.3,-43C8,-42.6,16.1,-35.7,23.3,-28.7Z"
             transform="translate(50 50)"
