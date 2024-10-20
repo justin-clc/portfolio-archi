@@ -50,7 +50,7 @@ export default function Landing({ content }) {
             className="font-primary group relative z-10 mt-6 h-12 w-48 cursor-pointer overflow-hidden rounded-md border-none bg-primary p-2 text-xl font-bold capitalize text-white transition-transform  hover:scale-105"
             onClick={goToSchoolYears}
           >
-            View my projects
+            View projects
             <span className="absolute -left-2 -top-8 h-32 w-52 origin-bottom scale-x-0 transform rounded-full bg-blue-200 transition-transform duration-1000 group-hover:scale-x-100 group-hover:duration-500"></span>
             <span className="absolute -left-2 -top-8 h-32 w-52 origin-bottom scale-x-0 transform rounded-full bg-blue-400 transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-700"></span>
             <span className="absolute -left-2 -top-8 h-32 w-52 origin-bottom scale-x-0 transform rounded-full bg-primary transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-1000"></span>
