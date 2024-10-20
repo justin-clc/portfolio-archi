@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}",],
   theme: {
-    typography: {
-      primary: "Montserrat",
-      secondary: "Source Sans 3",
-    },
     extend: {
+      fontFamily: {
+        primary: ["primary", "times-new-roman"],
+        secondary: ["secondary", "roboto"],
+      },
+
       colors: {
         primary: "#133e79",
         secondary: "#E0CEA9",
