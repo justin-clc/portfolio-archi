@@ -78,3 +78,43 @@
 .carousel-container div {
   height: 500px !important;
 }
+
+/* New Project Shortcut Button */
+#view-projects:hover .arrow {
+  animation: slide-in-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-8px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+#view-projects:active {
+  transform: scale(0.97);
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("https://files.123freevectors.com/wp-content/original/131247-abstract-dark-grey-polygonal-background-design.jpg?w=500&q=95");
+
+  /* Full height */
+  /* height: 100%; */
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax.alt {
+  background-image: url("https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/11/sukuna-wakes-up.jpg");
+  
+}
