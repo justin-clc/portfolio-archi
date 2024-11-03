@@ -65,23 +65,31 @@ export default function Landing({ content }) {
 					</button>
 				</div>
 
-				{/* Divider */}
-				<div className="relative hidden h-full min-h-96 w-1 items-center justify-between rounded-lg bg-white md:flex md:flex-col">
-					<div className=" block h-1 min-w-4 rounded-lg bg-white"></div>
-					<div className=" block h-1 min-w-4 rounded-lg bg-white"></div>
-				</div>
-
-				{/* Photo */}
-				{!content.ShortDesc ? (
-					<div className="min-h-52 min-w-52 animate-pulse rounded-2xl bg-bgLight md:min-h-80 md:min-w-80"></div>
-				) : (
-					<img
-						src={content.ShortDesc?.image.fields.file.url}
-						alt="Me"
-						className="max-w-52 rounded-lg md:h-80 md:max-w-none"
-					/>
-				)}
-			</div>
-		</section>
-	);
+        <svg
+          id="landing-svg"
+          className="relative md:-mr-6"
+          style={landingSvgStyle}
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="landing-blob"
+            className="animate-pulse text-bgMedium"
+            fill="currentColor"
+            d="M23.3,-28.7C30.4,-21.7,36.8,-14.6,38.5,-6.5C40.2,1.6,37.4,10.8,32.4,18C27.4,25.3,20.2,30.6,11.8,34.5C3.5,38.4,-6.2,40.8,-13.9,38.1C-21.6,35.3,-27.5,27.3,-32,18.8C-36.6,10.3,-39.9,1.3,-38.7,-7C-37.5,-15.4,-31.7,-23.2,-24.5,-30.2C-17.3,-37.2,-8.7,-43.4,-0.3,-43C8,-42.6,16.1,-35.7,23.3,-28.7Z"
+            transform="translate(50 50)"
+            strokeWidth={0}
+          ></path>
+          <clipPath id="cp">
+            <use href="#landing-blob" />
+          </clipPath>
+          <image
+            className="relative h-auto w-full object-cover"
+            clipPath="url(#cp)"
+            href={content.ShortDesc?.image.fields.file.url}
+          />
+        </svg>
+      </div>
+    </section>
+  );
 }
