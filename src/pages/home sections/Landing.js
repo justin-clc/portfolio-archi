@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import SkeletonLoader from "../../components/SkeletonLoader";
 
 export default function Landing({ content }) {
@@ -7,6 +8,15 @@ export default function Landing({ content }) {
 	const goToSchoolYears = () => {
 		navigate("/school-year/1");
 	};
+	const [imageLoaded, setImageLoaded] = useState(false);
+	useEffect(() => {
+		if (content.ShortDesc?.image.fields.file.url) {
+			const img = new Image();
+			img.src = content.ShortDesc.image.fields.file.url;
+			img.onload = () => setImageLoaded(true);
+		}
+
+	}, [content]);
 
 	const landingHeight = {
 		height: "clamp(600px, 100dvh, 720px)",
@@ -19,7 +29,7 @@ export default function Landing({ content }) {
 		>
 			<div className="mx-auto flex h-full max-h-[480px] max-w-7xl flex-col-reverse items-center gap-8 md:max-h-[400px] md:flex-row">
 				{/* Landing Content */}
-				<div className="flex flex-col items-center justify-center md:ml-8 md:w-1/2 md:items-end">
+				<div className="relative flex flex-col items-center justify-center md:ml-8 md:w-1/2 md:items-end">
 					{/* Work in progress */}
 					{/* <span className="text-center font-secondary text-lg text-accent md:text-right">
 						Architecture Student
@@ -33,12 +43,7 @@ export default function Landing({ content }) {
 						</h1>
 					)}
 					{!content.ShortDesc ? (
-						<>
-							<SkeletonLoader
-								type={"paragraph"}
-								color={"medium"}
-							/>
-						</>
+						<SkeletonLoader type={"paragraph"} color={"medium"} />
 					) : (
 						<p className="text-l max-w-3/4 mt-2 text-center font-secondary font-bold text-bgLight md:text-right md:text-lg">
 							{content.ShortDesc?.shortText}
@@ -72,15 +77,18 @@ export default function Landing({ content }) {
 				</div>
 
 				{/* Photo */}
-				{!content.ShortDesc ? (
-					<div className="min-h-52 min-w-52 animate-pulse rounded-2xl bg-bgLight md:min-h-80 md:min-w-80"></div>
-				) : (
+				<div className="relative min-h-52 min-w-52 md:min-h-80 md:min-w-80">
+					<div
+						className={`absolute inset-0 transition-opacity duration-500 ${imageLoaded ? "opacity-0" : "opacity-100"}`}
+					>
+						<div className="h-full w-full animate-pulse rounded-2xl bg-bgLight"></div>
+					</div>
 					<img
 						src={content.ShortDesc?.image.fields.file.url}
 						alt="Me"
-						className="max-w-52 rounded-lg md:h-80 md:max-w-none"
+						className={`absolute inset-0 h-full w-full rounded-lg transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
 					/>
-				)}
+				</div>
 			</div>
 		</section>
 	);
