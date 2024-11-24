@@ -52,6 +52,9 @@ export default function AboutMe() {
 	return (
 		<>
 			<section className="bg-bgMedium px-10 pb-12 pt-20">
+				<h3 className="m-auto max-w-5xl text-center font-primary text-3xl font-bold text-secondary md:text-4xl">
+					About Me
+				</h3>
 				<div className="md:justify-left m-auto flex max-w-5xl flex-col items-center gap-8 md:flex-row md:items-start md:justify-center">
 					<img
 						src={content.Me?.image.fields.file.url}
@@ -62,10 +65,7 @@ export default function AboutMe() {
 					/>
 
 					<div>
-						<h2 className="text-left font-primary text-3xl font-bold text-secondary md:text-4xl">
-							{content.Me?.shortText}
-						</h2>
-						<p className="text-l mt-4 rounded bg-secondary p-4 text-justify font-primary font-bold leading-normal text-bgMedium md:text-xl">
+						<p className="text-l mt-4 rounded bg-secondary p-4 text-justify font-secondary font-bold leading-relaxed text-bgMedium md:text-xl">
 							{content.Me?.longText}
 						</p>
 					</div>
@@ -76,7 +76,7 @@ export default function AboutMe() {
 				<h3 className="m-auto max-w-5xl text-center font-primary text-3xl font-bold text-secondary md:text-4xl">
 					Education
 				</h3>
-				<div className="m-auto flex max-w-5xl flex-wrap justify-evenly gap-4 pt-6">
+				<div className="m-auto flex max-w-5xl flex-wrap justify-evenly gap-x-4 gap-y-8 pt-6">
 					{sortedEducations.map((education, index) => (
 						<EducationCard
 							name={education.fields.school}
@@ -84,6 +84,7 @@ export default function AboutMe() {
 							course={education.fields.course}
 							start={education.fields.startYear}
 							end={education.fields.endYear}
+							present={education.fields.present}
 							key={index}
 						/>
 					))}
