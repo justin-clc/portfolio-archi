@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"; // Import useState and useEffect hooks
+import { motion } from "motion/react"; // Import motion for animations
 
 import EducationCard from "../../components/EducationCard";
 
@@ -52,10 +53,28 @@ export default function AboutMe() {
 	return (
 		<>
 			<section className="bg-bgMedium px-10 pb-12 pt-20">
-				<h3 className="m-auto max-w-5xl text-center font-primary text-3xl font-bold text-secondary md:text-4xl">
+				<motion.h3
+					className="m-auto max-w-5xl text-center font-primary text-3xl font-bold text-secondary md:text-4xl"
+					initial={{ opacity: 0, y: 50 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{
+						duration: 0.6,
+						ease: "easeInOut",
+					}}
+				>
 					About Me
-				</h3>
-				<div className="md:justify-left m-auto flex max-w-5xl flex-col items-center gap-8 md:flex-row md:items-start md:justify-center">
+				</motion.h3>
+				<motion.div
+					className="md:justify-left m-auto flex max-w-5xl flex-col items-center gap-8 md:flex-row md:items-start md:justify-center"
+					initial={{ opacity: 0, y: 50 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{
+						duration: 0.8,
+						ease: "easeInOut",
+					}}
+				>
 					<img
 						src={content.Me?.image.fields.file.url}
 						alt="Profilepicture"
@@ -69,14 +88,23 @@ export default function AboutMe() {
 							{content.Me?.longText}
 						</p>
 					</div>
-				</div>
+				</motion.div>
 			</section>
 
 			<section className="bg-bgMedium px-10 pb-16">
 				<h3 className="m-auto max-w-5xl text-center font-primary text-3xl font-bold text-secondary md:text-4xl">
 					Education
 				</h3>
-				<div className="m-auto flex max-w-5xl flex-wrap justify-evenly gap-x-4 gap-y-8 pt-6">
+				<motion.div 
+                    className="m-auto flex max-w-5xl flex-wrap justify-evenly gap-x-4 gap-y-8 pt-6"
+                    initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					viewport={{ once: true }}
+					transition={{
+						duration: 1,
+						ease: "easeInOut",
+					}}
+                >
 					{sortedEducations.map((education, index) => (
 						<EducationCard
 							name={education.fields.school}
@@ -88,7 +116,7 @@ export default function AboutMe() {
 							key={index}
 						/>
 					))}
-				</div>
+				</motion.div>
 			</section>
 		</>
 	);

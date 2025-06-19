@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import SkeletonLoader from "../../components/SkeletonLoader";
+import { motion } from "motion/react"; // Import motion for animations
 
 export default function Landing({ content }) {
 	const navigate = useNavigate();
