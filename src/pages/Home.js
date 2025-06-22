@@ -1,8 +1,18 @@
+import { useState, useEffect } from "react";
 import Landing from "./home sections/Landing";
 import AboutMe from "./home sections/AboutMe";
 import FeaturedActivities from "./home sections/FeaturedActivities";
 
 export default function Home({ content }) {
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setLoading(false);
+		}, 2000);
+		return () => clearTimeout(timer);
+	}, []);
+
 	const wavesDivider = {
 		width: "calc(100% + 1.3px)",
 	};
@@ -10,7 +20,15 @@ export default function Home({ content }) {
 	const waveDivider = {
 		width: "calc(100% + 1.3px)",
 	};
-    
+
+	if (loading) {
+		return (
+			<div className="-mt-28 flex h-screen w-full items-center justify-center bg-bgDark">
+				<div className="border-textLight h-16 w-16 animate-spin rounded-full border-4 border-solid border-t-transparent"></div>
+			</div>
+		);
+	}
+
 	return (
 		<main className="-mt-16 w-full">
 			<Landing content={content} />
